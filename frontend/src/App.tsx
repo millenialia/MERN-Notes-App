@@ -7,6 +7,7 @@ import stylesUtils from "./styles/utils.module.css"
 import * as NotesApi from "./network/notes_api"
 import AddEditNoteDialog from './components/AddEditNoteDialog';
 import { FaPlus } from "react-icons/fa"
+import SignUpModal from './components/SignUpModal';
 
 
 function App() {
@@ -96,6 +97,13 @@ function App() {
           setNotes(notes.map(existingNote => existingNote._id === updatedNote._id ? updatedNote : existingNote ))
           setNoteToEdit(null)
         }}/>}
+        {
+          true &&
+          <SignUpModal
+          onDismiss={()=>{ }}
+          onSignUpSuccessful={()=>{ }}
+          />
+        }
     </Container>
   );
 }
